@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+  background: #f7f8fc;
+}
+
+.admin-sidebar-shell {
+  background: linear-gradient(180deg, #101828 0%, #1d2939 100%);
+  color: white;
+  padding: 28px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.profile p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.profile span {
+  display: block;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fb7185, #f97316);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.admin-sidebar-shell ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.admin-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #e5e7eb;
+  padding: 14px 16px;
+  border-radius: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.admin-logout-btn {
+  margin-top: auto;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 13px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.admin-logout-btn:hover {
+  background: #f04438;
+  border-color: #f04438;
+}
+
+.admin-content-shell {
+  padding: 28px;
+}
+
+.admin-page {
+  width: 100%;
+}
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.admin-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f04438;
+  margin-bottom: 8px;
+}
+
+.admin-page-header h1 {
+  font-size: 34px;
+  color: #101828;
+}
+
+.admin-page-copy {
+  max-width: 420px;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+  border: 1px solid #eaecf0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.dashboard-link-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #fda29b;
+  box-shadow: 0 18px 42px rgba(16, 24, 40, 0.12);
+}
+
+.dashboard-card-action {
+  display: inline-block;
+  margin-top: 14px;
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #667085;
+}
+
+.card h1 {
+  font-size: 36px;
+  color: #101828;
+  margin: 14px 0 10px;
+}
+
+.card p {
+  color: #98a2b3;
+}
+
+.admin-table-card {
+  margin-top: 28px;
+  background: white;
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(16, 24, 40, 0.06);
+}
+
+.admin-table-head {
+  padding: 22px 24px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.admin-table-head h2 {
+  color: #101828;
+  font-size: 22px;
+}
+
+.admin-table-scroll {
+  overflow-x: auto;
+}
+
+.admin-touch-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.admin-touch-table th {
+  background: #f9fafb;
+  color: #667085;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 16px 24px;
+  letter-spacing: 0.04em;
+}
+
+.admin-touch-table td {
+  padding: 18px 24px;
+  border-top: 1px solid #f2f4f7;
+  color: #344054;
+}
+
+.admin-touch-table tr {
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.admin-touch-table tbody tr:hover {
+  background: #fff8f5;
+}
+
+.admin-touch-table td strong,
+.admin-touch-table td span {
+  display: block;
+}
+
+.admin-touch-table td strong,
+.admin-table-food-link {
+  color: #101828;
+  margin-bottom: 5px;
+}
+
+.admin-table-food-link {
+  display: block;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.admin-table-food-link:hover {
+  color: #b42318;
+}
+
+.admin-touch-table td span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.admin-status-pill {
+  display: inline-flex !important;
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px !important;
+}
+
+.admin-status-pill.ok {
+  background: #ecfdf3;
+  color: #027a48 !important;
+}
+
+.admin-status-pill.off {
+  background: #fef3f2;
+  color: #b42318 !important;
+}
+
+.admin-empty-cell {
+  text-align: center;
+  color: #98a2b3 !important;
+}
+
+.admin-login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f7f8fc;
+}
+
+.admin-login-card {
+  width: min(440px, 100%);
+  background: white;
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 18px 48px rgba(16, 24, 40, 0.1);
+}
+
+.admin-login-mark {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  background: #101828;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.admin-login-card h1 {
+  color: #101828;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.admin-login-copy {
+  color: #667085;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.admin-login-card label {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.admin-login-card input {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 13px 14px;
+  font-size: 15px;
+}
+
+.admin-login-card input:focus {
+  outline: none;
+  border-color: #f04438;
+  box-shadow: 0 0 0 4px rgba(240, 68, 56, 0.12);
+}
+
+.admin-login-card button {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #f04438;
+  color: white;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.admin-login-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 960px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar-shell {
+    position: static;
+    height: auto;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

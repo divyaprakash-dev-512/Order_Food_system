@@ -1,0 +1,102 @@
+.reguser-main-wrapper {
+  min-height: 100vh;
+}
+
+.reguser-heading-title {
+  font-size: 34px;
+  color: #101828;
+  margin-bottom: 22px;
+}
+
+.reguser-table-main {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+}
+
+.reguser-table-head-row {
+  background: #101828;
+}
+
+.reguser-th {
+  color: #fff;
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.reguser-td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eaecf0;
+  color: #344054;
+}
+
+.reguser-table-body-row:hover {
+  background: #f9fafb;
+}
+
+.reguser-role-admin {
+  color: #d92d20;
+  font-weight: 700;
+}
+
+.reguser-role-user {
+  color: #039855;
+  font-weight: 700;
+}
+
+.reguser-toolbar {
+  margin-bottom: 20px;
+}
+
+.reguser-search {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.reguser-role-select {
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.reguser-delete-btn {
+  border: none;
+  background: #b42318;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.reguser-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  background: #027a48;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.reguser-role-chip {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f2f4f7;
+  color: #344054;
+  font-weight: 700;
+}

@@ -1,0 +1,211 @@
+/* --- Base Layout --- */
+.u-dash-viewport {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.u-dash-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.u-dash-panel {
+  background-color: #ffffff;
+  padding: 30px;
+  border-right: 1px solid #eee;
+}
+
+.u-dash-user-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.u-dash-avatar-circle {
+  width: 80px;
+  height: 80px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+.u-dash-user-name {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.u-dash-user-email {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.u-dash-logout-trigger {
+  background: #fff1f1;
+  color: #ff4d4d;
+  border: 1px solid #ffcccc;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.u-dash-logout-trigger:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* --- Navigation Tabs --- */
+.u-dash-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.u-dash-menu-link {
+  text-align: left;
+  padding: 12px 15px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  transition: 0.3s;
+}
+
+.u-dash-menu-link:hover {
+  background: #f0f4f8;
+}
+
+.u-dash-menu-link--active {
+  background: #007bff;
+  color: white !important;
+}
+
+/* --- Main Content Area --- */
+.u-dash-main {
+  padding: 40px;
+}
+
+.u-dash-title {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+/* --- Profile Section --- */
+.u-profile-card {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.u-profile-field {
+  margin-bottom: 20px;
+}
+
+.u-profile-field label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.u-profile-field p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* --- Password Form --- */
+.u-password-form {
+  max-width: 400px;
+}
+
+.u-input-group {
+  margin-bottom: 20px;
+}
+
+.u-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #444;
+}
+
+.u-input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.u-dash-save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.u-dash-save-btn:hover {
+  background: #218838;
+}
+
+/* --- Orders Section --- */
+.u-order-item-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.u-btn-status-info {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: none;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.u-btn-status-pending { background: #fff3cd; color: #856404; }
+.u-btn-status-confirmed { background: #d4edda; color: #155724; }
+.u-btn-status-rejected { background: #f8d7da; color: #721c24; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .u-dash-layout {
+    grid-template-columns: 1fr;
+  }
+  .u-dash-panel {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+}
