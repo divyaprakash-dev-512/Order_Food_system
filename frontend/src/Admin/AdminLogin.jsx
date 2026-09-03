@@ -1,41 +1,38 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../admincss/ad.css";
-
-const API_BASE_URL = "http://localhost:5533";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
 
+  // Hardcoded Credentials
+  const FIXED_EMAIL = "admin@123gmail.com";
+  const FIXED_PASSWORD = "aryan";
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const res = await axios.post(`${API_BASE_URL}/api/login`, formData);
+    // Fixed credentials check
+    if (formData.email === FIXED_EMAIL && formData.password === FIXED_PASSWORD) {
+      const dummyAdminUser = {
+        email: FIXED_EMAIL,
+        role: "admin",
+        name: "Admin Aryan",
+      };
 
-      if (res.data.user?.role !== "admin") {
-        alert("Only admin can login here");
-        return;
-      }
-
-      localStorage.setItem("adminUser", JSON.stringify(res.data.user));
-      navigate("/admin");
-    } catch (error) {
-      if (error.code === "ERR_NETWORK") {
-        alert("Backend server start nahi hai. Pehle backend me node server.js chalao.");
-      } else {
-        alert(error.response?.data?.message || "Admin login failed");
-      }
-    } finally {
+      localStorage.setItem("adminUser", JSON.stringify(dummyAdminUser));
       setLoading(false);
+      navigate("/admin");
+    } else {
+      setLoading(false);
+      alert("Invalid Email or Password!");
     }
   };
 
@@ -54,7 +51,7 @@ export default function AdminLogin() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="admin@example.com"
+            placeholder="admin@123gmail.com"
             required
           />
         </label>
