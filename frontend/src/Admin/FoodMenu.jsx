@@ -4,7 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import "../admincss/foodmenu.css";
 import { CATEGORY_NAME_MAP } from "../data/categories";
 
-const API_BASE_URL = "http://localhost:5533";
+const API_BASE_URL = "https://order-food-system-1.onrender.com";
 
 const FoodMenu = () => {
   const [searchParams] = useSearchParams();

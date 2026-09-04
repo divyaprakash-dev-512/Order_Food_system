@@ -53,7 +53,7 @@ export default function CreateFood() {
         formData.append("images", img);
       });
 
-      await axios.post("http://localhost:5533/api/create-food", formData, {
+      await axios.post("https://order-food-system-1.onrender.com/api/create-food", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

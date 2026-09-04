@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../styling/home.css";
 
-const API_BASE_URL = "http://localhost:5533";
+const API_BASE_URL = "https://order-food-system-1.onrender.com";
 
 const buildImageUrl = (imagePath) => {
   if (!imagePath) {

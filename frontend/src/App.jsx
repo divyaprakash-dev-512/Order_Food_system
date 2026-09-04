@@ -28,20 +28,20 @@ function App() {
       <Routes>
 
         {/* PUBLIC ROUTES */}
-        <Route path='/' element={<LandingPage />} />
+        <Route path='/' element={<LandingPage/>} />
         <Route path='/myCart' element={<MyCart />} />
         <Route path='/food-menu/category/:category' element={<CategoryFoods />} />
         <Route path='/food-menu/item/:id' element={<Singlefood />} />
         <Route path='/admin-login' element={<AdminLogin />} />
 
-        {/* ✅ ACCOUNT (NESTED ROUTES) */}
+        
         <Route path='/account' element={<Account />}>
           <Route path='orders' element={<Orders />} />
           <Route path='profile' element={<Profile />} />
           <Route path='change-password' element={<ChangePassword />} />
         </Route>
 
-        {/* ADMIN ROUTES */}
+        
         <Route element={<AdminLayout />}>
           <Route path='/admin' element={<Dashboard />} />
           <Route path='/dash' element={<Dashboard />} />

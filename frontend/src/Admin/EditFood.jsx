@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../admincss/foodForm.css";
 import { CATEGORY_OPTIONS } from "../data/categories";
 
-const API_BASE_URL = "http://localhost:5533";
+const API_BASE_URL = "https://order-food-system-1.onrender.com";
 
 export default function EditFood() {
   const { id } = useParams();
