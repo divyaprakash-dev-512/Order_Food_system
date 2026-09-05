@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../admincss/rg.css";
 
-const API_BASE_URL = "https://order-food-system-1.onrender.com";
+const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
 
 export default function RegisterUser() {
   const [regUsersData, setRegUsersData] = useState([]);

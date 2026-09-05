@@ -5,7 +5,7 @@ import { CATEGORY_NAME_MAP } from "../data/categories";
 import { addToCart } from "../utils/cart";
 import "../styling/home.css";
 
-const API_BASE_URL = "https://order-food-system-1.onrender.com";
+const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
 
 const buildImageUrl = (imagePath) => {
   if (!imagePath) {

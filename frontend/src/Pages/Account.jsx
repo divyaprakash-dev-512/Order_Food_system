@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styling/account.css";
 
-const API_BASE_URL = "https://order-food-system-1.onrender.com";
+const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
 
 const statusTextMap = {
   pending: "Awaiting admin decision",

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { clearCart, getCartItems, removeFromCart, updateCartQuantity } from "../utils/cart";
 import "../styling/cart.css";
 
-const API_BASE_URL = "https://order-food-system-1.onrender.com";
+const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
 
 const buildImageUrl = (imagePath) => {
   if (!imagePath) {

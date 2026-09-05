@@ -9,7 +9,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // Navbar ke dropdown ke liye categories fetch karna
-    axios.get("https://order-food-system-1.onrender.com/api/show-food")
+    axios.get("https://order-food-backend-nfua.onrender.com/api/show-food")
       .then(res => {
         const list = res.data.data || [];
         const uniqueCats = [...new Set(list.map(i => i.category).filter(Boolean))];

@@ -7,7 +7,7 @@ import Category from "./Category";
 import DrinkCategory from "./DrinkCategory";
 import HeroSecond from "./HeroSecond";
 
-const API_BASE_URL = "https://order-food-system-1.onrender.com";
+const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
 
 const buildImageUrl = (imagePath) => {
   if (!imagePath) {
