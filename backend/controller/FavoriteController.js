@@ -3,6 +3,7 @@ const Favorite = require('../model/favorite');
 const addFavorite = async (req, res) => {
   try {
     const { userId, foodId } = req.body;
+    console.log("here is id's:",userId,foodId);
 
     if (!userId || !foodId) {
       return res.status(400).json({

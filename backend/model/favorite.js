@@ -8,7 +8,7 @@ const favoriteScehma = new mongoose.Schema({
     },
     food: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "FoodMenu",
+      ref: "Foodmenu",
       required: true,
     },
      },
