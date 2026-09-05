@@ -6,7 +6,7 @@ import { addToCart } from "../utils/cart";
 import "../styling/home.css";
 
 const API_BASE_URL = "https://order-food-backend-nfua.onrender.com";
-
+  
 const buildImageUrl = (imagePath) => {
   if (!imagePath) {
     return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80";
@@ -23,7 +23,48 @@ export default function CategoryFoods() {
   const { category } = useParams();
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState({});
   const [error, setError] = useState("");
+
+
+
+const toggleFavorite = async (foodId) => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const userId = user?._id;
+
+    if (!userId) {
+      alert("Please login first");
+      return;
+    }
+
+    const isFavorite = favorites[foodId];
+
+    if (isFavorite) {
+      await axios.delete(
+        `${API_BASE_URL}/api/favorites/${userId}/${foodId}`
+      );
+
+      setFavorites((prev) => ({
+        ...prev,
+        [foodId]: false,
+      }));
+    } else {
+      await axios.post(`${API_BASE_URL}/api/favorites`, {
+        userId: userId,
+        foodId: foodId,
+      });
+
+      setFavorites((prev) => ({
+        ...prev,
+        [foodId]: true,
+      }));
+    }
+  } catch (error) {
+    console.log("FAVORITE ERROR:", error.response?.data || error);
+    alert("Something went wrong");
+  }
+};
 
   const title = useMemo(
     () => CATEGORY_NAME_MAP[category] || category,
@@ -74,12 +115,27 @@ export default function CategoryFoods() {
 
       <div className="category-food-grid">
         {foods.map((item) => (
-          <article className="category-food-card" key={item._id}>
-            <img
-              src={buildImageUrl(item.images?.[0])}
-              alt={item.itemName}
-              className="category-food-image"
-            />
+         <article className="category-food-card" key={item._id}>
+
+  <div className="category-food-image-wrapper">
+
+    <img
+      src={buildImageUrl(item.images?.[0])}
+      alt={item.itemName}
+      className="category-food-image"
+    />
+
+    <button
+      className={`favorite-btn ${
+        favorites[item._id] ? "active" : ""
+      }`}
+      onClick={() => toggleFavorite(item._id)}
+      aria-label="Add to favorites"
+    >
+      {favorites[item._id] ? "❤️" : "🤍"}
+    </button>
+
+  </div>
             <div className="category-food-body">
               <div className="food-badge-row">
                 {item.offerText ? (
