@@ -512,6 +512,9 @@ export default function Home() {
         <p className="site-footer-bottom">
           Foodie kitchen picks, handcrafted for hungry customers.
         </p>
+        <p>
+          <Link to={'/admin'} style={{marginLeft:'200'}}>A</Link>
+        </p>
       </footer>
     </div>
     
