@@ -1,5 +1,8 @@
 const Food = require("../model/foodMenu");
 
+const toStoredImage = (file) =>
+  `data:${file.mimetype};base64,${file.buffer.toString("base64")}`;
+
 exports.getAllFoods = async (req, res) => {
   try {
     const foods = await Food.find().sort({ createdAt: -1 });
@@ -52,7 +55,7 @@ exports.createFood = async (req, res) => {
     } = req.body;
 
     const imagePaths = Array.isArray(req.files)
-      ? req.files.map((file) => `/uploads/${file.filename}`)
+      ? req.files.map(toStoredImage)
       : [];
 
     const newFood = new Food({
@@ -111,7 +114,7 @@ exports.updateFood = async (req, res) => {
     const payload = { ...req.body };
 
     if (Array.isArray(req.files) && req.files.length > 0) {
-      payload.images = req.files.map((file) => `/uploads/${file.filename}`);
+      payload.images = req.files.map(toStoredImage);
     }
 
     if (typeof payload.isTrending !== "undefined") {

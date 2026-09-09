@@ -366,7 +366,7 @@ const Account = () => {
 
                     const imageUrl =
                       food.images?.[0]
-                        ? food.images[0].startsWith("http")
+                        ? food.images[0].startsWith("http") || food.images[0].startsWith("data:")
                           ? food.images[0]
                           : `${API_BASE_URL}${food.images[0]}`
                         : "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80";

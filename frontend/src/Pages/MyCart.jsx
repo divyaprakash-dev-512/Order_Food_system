@@ -10,7 +10,7 @@ const buildImageUrl = (imagePath) => {
   if (!imagePath) {
     return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80";
   }
-  if (imagePath.startsWith("http")) {
+  if (imagePath.startsWith("http") || imagePath.startsWith("data:")) {
     return imagePath;
   }
   return `${API_BASE_URL}${imagePath}`;

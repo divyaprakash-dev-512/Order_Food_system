@@ -14,7 +14,7 @@ const buildImageUrl = (imagePath) => {
     return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80";
   }
 
-  if (imagePath.startsWith("http")) {
+  if (imagePath.startsWith("http") || imagePath.startsWith("data:")) {
     return imagePath;
   }
 
