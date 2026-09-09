@@ -90,6 +90,33 @@ const toggleFavorite = async (foodId) => {
     fetchFoods();
   }, [category]);
 
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user?._id) {
+        setFavorites({});
+        return;
+      }
+
+      try {
+        const res = await axios.get(`${API_BASE_URL}/api/favorites/${user._id}`);
+        const favoriteMap = (res.data.favorites || []).reduce((acc, favorite) => {
+          if (favorite.food?._id) {
+            acc[favorite.food._id] = true;
+          }
+          return acc;
+        }, {});
+
+        setFavorites(favoriteMap);
+      } catch (error) {
+        console.log("Unable to load favorites:", error);
+      }
+    };
+
+    fetchFavorites();
+  }, []);
+
   return (
     <section className="category-results-page">
       <div className="category-results-hero">

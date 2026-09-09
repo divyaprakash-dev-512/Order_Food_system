@@ -62,7 +62,7 @@ const Account = () => {
           `${API_BASE_URL}/api/favorites/${user._id}`
         );
 
-        setFavorites(res.data.data || []);
+        setFavorites(res.data.favorites || []);
       } catch (error) {
         console.log("Error fetching favorites:", error);
       }
